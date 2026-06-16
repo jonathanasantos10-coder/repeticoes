@@ -45,17 +45,54 @@ for (i = 0; i < 10; i++){
  const inputNumRepeticao = document.querySelector('#NumRepeticao')
 const btnExibir = document.querySelector('#btn-exibir')
 const divResultFrase = document.querySelector('#result-frase')
-
+// variaveis para o algoritmo 
 let contFrase = 0
 let totalRepeticao = 0
 
 btnExibir.addEventListener('click', (evt) =>{
     totalRepeticao = Number(inputNumRepeticao.value)
 
-while( totalRepeticao > contFrase){
+while( totalRepeticao > contFrase){ // enquanto o total de repetição de frases for menor que o contfrase, o código vai rodar e imprimir a frae novamente
     divResultFrase.innerHTML += `${inputFrase.value} <br>`;
-    contFrase++
+    contFrase++ 
 }    
-
-
 })
+
+//COLEÇÃO DE DADOS - ARRAY 
+transporte = ['Bicicleta', 'Carro', 'Moto', 'Ônibus', 'Avião', 'Barco'] 
+
+// for (i = 0; i < transporte.length; i++){
+   // console.log(transporte[i])
+//}
+
+// FOR IN
+const divForin = document.querySelector('#div-forin')
+for(let pos in transporte){
+    console.log(transporte[pos])
+    divForin.innerHTML += `${transporte[pos]}<br>`
+}
+
+//FOR OF
+const divForOf = document.querySelector('#div-forof')
+
+for(let elem of transporte){
+    divForOf.innerHTML += `${elem} <br>`
+}
+
+//coleção de pessoas - array de objeto
+const pessoas = [
+    {nome: 'Maria', idade: 18, renda: 15000},
+    {nome: 'Josefina', idade: 73, renda: 1800},
+    {nome: 'Chicó', idade: 32, renda: 1.50},
+    {nome: 'João Grilo', idade: 34, renda: 2}
+]
+ console.log('===========FOR IN===================')
+for (let indiceObjPessoa in pessoas){
+    console.log(pessoas[indiceObjPessoa].nome, pessoas[indiceObjPessoa].idade, pessoas[indiceObjPessoa].renda)
+}
+console.log('===========FOR OF===================')
+for(let pessoa of pessoas)
+    console.log(pessoa.nome, pessoa.idade, pessoa.renda)
+
+// FOR EACH
+const divForeach = document.querySelector('#div-foreach')
